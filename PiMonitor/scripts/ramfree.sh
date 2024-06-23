@@ -1,0 +1,1 @@
+cat /proc/meminfo | grep 'MemAvailable' | awk '{print$2}'
