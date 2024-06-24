@@ -1,3 +1,5 @@
+#RpiOS ascii art taken from neofetch
+
 import time, os
 
 #Color codes
@@ -6,6 +8,8 @@ clear = '\x1b[0m' + bold
 red = '\x1b[31m'
 cyan = '\x1b[96m'
 magenta = '\033[35m'
+green = "\033[1;32m"
+red2 = "\033[0;31m"
 
 def get_output(command):
         result = os.popen(command)
@@ -28,18 +32,15 @@ def mumble_status():
 if __name__ == '__main__':
     while True:
         os.system('clear')
-        print(bold + red + '⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀' + "RAM Usage:")
-        print(red + '⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣧⣶⣶⣶⣦⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀' + clear + ram())
-        print(red + '⠀    ⠀⣠⣾⢿⣿⣿⣿⣏⠉⠉⠛⠛⠿⣷⣕⠀⠀⠀⠀⠀⠀  '+ cyan + "CPU Usage:" + clear)
-        print(red + '⠀  ⠀⣠⣾⢝⠄⢀⣿⡿⠻⣿⣄⠀⠀⠀⠀⠈⢿⣧⡀⣀⣤⡾⠀ ⠀' + clear + cpu())
-        print(red + '  ⠀⢰⣿⡡⠁⠀⠀⣿⡇⠀⠸⣿⣾⡆⠀⠀⣀⣤⣿⣿⠋⠁⠀⠀⠀ ' + magenta + "Mumble Status:" + clear)
-        print(red + ' ⠀⢀⣷⣿⠃⠀⠀⢸⣿⡇⠀⠀⠹⣿⣷⣴⡾⠟⠉⠸⣿⡇⠀⠀⠀⠀ ' + clear + mumble_status())
-        print(red + '⠀⠀⢸⣿⠗⡀⠀⠀⢸⣿⠃⣠⣶⣿⠿⢿⣿⡀⠀⠀⢀⣿⡇⠀⠀⠀ ⠀')
-        print(red + '⠀⠀⠘⡿⡄⣇⠀⣀⣾⣿⡿⠟⠋⠁⠀⠈⢻⣷⣆⡄⢸⣿⡇⠀⠀⠀ ⠀')
-        print(red + '⠀⠀⠀⢻⣷⣿⣿⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠻⣿⣷⣿⡟⠀⠀   ⠀')
-        print(red + '⢀⣰⣾⣿⠿⣿⣿⣾⣿⠇⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣅⠀⠀    ')
-        print(red + '⠀⠰⠊⠁⠀⠙⠪⣿⣿⣶⣤⣄⣀⣀⣀⣤⣶⣿⠟⠋⠙⢿⣷⡄⠀   ')
-        print(red + '⠀⠀⠀⠀⠀⠀⢀⣿⡟⠺⠭⠭⠿⠿⠿⠟⠋⠁⠀⠀⠀⠀⠙⠏⣦⠀ ⠀')
-
+        print(bold + green + "   .~~.   .~~.       " + red + "RAM Usage:")
+        print(green + "  '. \ ' ' / .'      " + clear + ram())
+        print(red2 + "   .~ .~~~..~.       " + cyan + "CPU Usage:" + clear)
+        print(red2 + "  : .~.'~'.~. :      " + clear + cpu())
+        print(red2 + " ~ (   ) (   ) ~     " + magenta + "Mumble Status:" + clear)
+        print(red2 + "( : '~'.~.'~' : )    " + clear + mumble_status())
+        print(red2 + " ~ .~ (   ) ~. ~     ")
+        print(red2 + "  (  : '~' :  )      ")
+        print(red2 + "   '~ .~~~. ~'       ")
+        print(red2 + "       '~'           ")
 
         time.sleep(20) #refresh rate
