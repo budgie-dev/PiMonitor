@@ -1,10 +1,10 @@
 import time, os
 
 #Color codes
-clear = '\x1b[0m'
+bold = '\x1b[1m'
+clear = '\x1b[0m' + bold
 red = '\x1b[31m'
 cyan = '\x1b[96m'
-bold = '\x1b[1m'
 magenta = '\033[35m'
 
 def get_output(command):
@@ -19,8 +19,7 @@ def ram():
     return str((int(ramfree / int(ramtotal) * 100))) + "%"
         
 def cpu():
-    return str(get_output('sh scripts/cpu.sh'))
-
+    return str(100 - int(get_output('sh scripts/cpu.sh'))) + '%'
 def mumble_status():
     if get_output('sh scripts/mumble.sh') == 'running':
         return 'Running'
@@ -29,12 +28,18 @@ def mumble_status():
 if __name__ == '__main__':
     while True:
         os.system('clear')
-        print(bold + red + "RAM Usage:" + clear + bold)
-        print(ram())
-        print('\n' + cyan + "CPU Usage:" + clear + bold)
-        print(cpu())
-        print('\n' + magenta + "Mumble Status:" + clear + bold)
-        print(mumble_status())
+        print(bold + red + '⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀' + "RAM Usage:")
+        print(red + '⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣧⣶⣶⣶⣦⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀' + clear + ram())
+        print(red + '⠀    ⠀⣠⣾⢿⣿⣿⣿⣏⠉⠉⠛⠛⠿⣷⣕⠀⠀⠀⠀⠀⠀  '+ cyan + "CPU Usage:" + clear)
+        print(red + '⠀  ⠀⣠⣾⢝⠄⢀⣿⡿⠻⣿⣄⠀⠀⠀⠀⠈⢿⣧⡀⣀⣤⡾⠀ ⠀' + clear + cpu())
+        print(red + '  ⠀⢰⣿⡡⠁⠀⠀⣿⡇⠀⠸⣿⣾⡆⠀⠀⣀⣤⣿⣿⠋⠁⠀⠀⠀ ' + magenta + "Mumble Status:" + clear)
+        print(red + ' ⠀⢀⣷⣿⠃⠀⠀⢸⣿⡇⠀⠀⠹⣿⣷⣴⡾⠟⠉⠸⣿⡇⠀⠀⠀⠀ ' + clear + mumble_status())
+        print(red + '⠀⠀⢸⣿⠗⡀⠀⠀⢸⣿⠃⣠⣶⣿⠿⢿⣿⡀⠀⠀⢀⣿⡇⠀⠀⠀ ⠀')
+        print(red + '⠀⠀⠘⡿⡄⣇⠀⣀⣾⣿⡿⠟⠋⠁⠀⠈⢻⣷⣆⡄⢸⣿⡇⠀⠀⠀ ⠀')
+        print(red + '⠀⠀⠀⢻⣷⣿⣿⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠻⣿⣷⣿⡟⠀⠀   ⠀')
+        print(red + '⢀⣰⣾⣿⠿⣿⣿⣾⣿⠇⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣅⠀⠀    ')
+        print(red + '⠀⠰⠊⠁⠀⠙⠪⣿⣿⣶⣤⣄⣀⣀⣀⣤⣶⣿⠟⠋⠙⢿⣷⡄⠀   ')
+        print(red + '⠀⠀⠀⠀⠀⠀⢀⣿⡟⠺⠭⠭⠿⠿⠿⠟⠋⠁⠀⠀⠀⠀⠙⠏⣦⠀ ⠀')
 
 
-        time.sleep(5) #refresh rate
+        time.sleep(20) #refresh rate
