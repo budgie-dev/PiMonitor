@@ -14,7 +14,7 @@ def ram():
 def cpu():
     return str(100 - int(get_output('sh scripts/cpu.sh'))) + '%'
 
-def temp()
+def temp():
     return str(get_output('sh scripts/temp.sh'))
 
 def mumble_status():
@@ -31,7 +31,7 @@ if __name__ == '__main__':
         print(red2 + "  : .~.'~'.~. :      " + clear + cpu())
         print(red2 + " ~ (   ) (   ) ~     " + magenta + "Mumble Status:" + clear)
         print(red2 + "( : '~'.~.'~' : )    " + clear + mumble_status())
-        print(red2 + " ~ .~ (   ) ~. ~     " + clear + )
+        print(red2 + " ~ .~ (   ) ~. ~     ")
         print(red2 + "  (  : '~' :  )      ")
         print(red2 + "   '~ .~~~. ~'       ")
         print(red2 + "       '~'           ")
