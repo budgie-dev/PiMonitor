@@ -1,15 +1,4 @@
-#RpiOS ascii art taken from neofetch
 
-import time, os
-
-#Color codes
-bold = '\x1b[1m'
-clear = '\x1b[0m' + bold
-red = '\x1b[31m'
-cyan = '\x1b[96m'
-magenta = '\033[35m'
-green = "\033[1;32m"
-red2 = "\033[0;31m"
 
 def get_output(command):
         result = os.popen(command)
@@ -24,6 +13,10 @@ def ram():
         
 def cpu():
     return str(100 - int(get_output('sh scripts/cpu.sh'))) + '%'
+
+def temp()
+    return str(get_output('sh scripts/temp.sh'))
+
 def mumble_status():
     if get_output('sh scripts/mumble.sh') == 'running':
         return 'Running'
@@ -38,7 +31,7 @@ if __name__ == '__main__':
         print(red2 + "  : .~.'~'.~. :      " + clear + cpu())
         print(red2 + " ~ (   ) (   ) ~     " + magenta + "Mumble Status:" + clear)
         print(red2 + "( : '~'.~.'~' : )    " + clear + mumble_status())
-        print(red2 + " ~ .~ (   ) ~. ~     ")
+        print(red2 + " ~ .~ (   ) ~. ~     " + clear + )
         print(red2 + "  (  : '~' :  )      ")
         print(red2 + "   '~ .~~~. ~'       ")
         print(red2 + "       '~'           ")
