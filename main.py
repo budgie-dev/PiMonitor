@@ -1,4 +1,12 @@
+import os, time
 
+#Color codes
+clear = '\x1b[0m'
+red = '\x1b[31m'
+cyan = '\x1b[96m'
+bold = '\x1b[1m'
+magenta = '\033[35m'
+green = '\033[32m'
 
 def get_output(command):
         result = os.popen(command)
@@ -10,7 +18,7 @@ def ram():
     ramtotal = get_output('sh scripts/ramtotal.sh')
     ramfree = int(ramtotal) - int(ramfree)
     return str((int(ramfree / int(ramtotal) * 100))) + "%"
-        
+
 def cpu():
     return str(100 - int(get_output('sh scripts/cpu.sh'))) + '%'
 
@@ -27,13 +35,13 @@ if __name__ == '__main__':
         os.system('clear')
         print(bold + green + "   .~~.   .~~.       " + red + "RAM Usage:")
         print(green + "  '. \ ' ' / .'      " + clear + ram())
-        print(red2 + "   .~ .~~~..~.       " + cyan + "CPU Usage:" + clear)
-        print(red2 + "  : .~.'~'.~. :      " + clear + cpu())
-        print(red2 + " ~ (   ) (   ) ~     " + magenta + "Mumble Status:" + clear)
-        print(red2 + "( : '~'.~.'~' : )    " + clear + mumble_status())
-        print(red2 + " ~ .~ (   ) ~. ~     ")
-        print(red2 + "  (  : '~' :  )      ")
-        print(red2 + "   '~ .~~~. ~'       ")
-        print(red2 + "       '~'           ")
+        print(red + "   .~ .~~~..~.       ")
+        print(red + "  : .~.'~'.~. :      ")
+        print(red + " ~ (   ) (   ) ~     " + bold + magenta + "Mumble Status:" + clear)
+        print(red + "( : '~'.~.'~' : )    " + clear + mumble_status())
+        print(red + " ~ .~ (   ) ~. ~     ")
+        print(red + "  (  : '~' :  )      ")
+        print(red + "   '~ .~~~. ~'       " + bold + cyan + "CPU Usage:")
+        print(red + "       '~'           " + clear + cpu())
 
         time.sleep(20) #refresh rate
