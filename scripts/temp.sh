@@ -1,1 +1,1 @@
-sensors | grep 'Core 0' | awk '{print $3}'| cut -b 2-
+sensors | grep 'temp1' | head -n 1 | cut -b 16-
