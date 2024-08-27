@@ -36,7 +36,7 @@ if __name__ == '__main__':
         print(bold + green + "   .~~.   .~~.       " + red + "RAM Usage:")
         print(green + "  '. \ ' ' / .'      " + clear + ram())
         print(red + "   .~ .~~~..~.       ")
-        print(red + "  : .~.'~'.~. :      " + bold + magenta + "Mumble Status:" + clear)
+        print(red + "  : .~.'~'.~. :      " + bold + magenta + "Minecraft Status:" + clear)
         print(red + " ~ (   ) (   ) ~     " + clear + mumble_status())
         print(red + "( : '~'.~.'~' : )    ")
         print(red + " ~ .~ (   ) ~. ~     " + bold + green + "CPU Core 0 temp:" + clear)
