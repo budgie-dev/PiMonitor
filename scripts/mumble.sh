@@ -1,1 +1,1 @@
-systemctl show -p SubState --value mumble-server
+systemctl --user show -p SubState --value mcserver
